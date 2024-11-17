@@ -329,10 +329,10 @@ def eval_bc(config, ckpt_name, save_episode=True, num_rollouts=50):
         ts = env.reset()
 
         ### onscreen render
-        if onscreen_render:
-            ax = plt.subplot()
-            plt_img = ax.imshow(env._physics.render(height=480, width=640, camera_id=onscreen_cam))
-            plt.ion()
+        # if onscreen_render:
+            # ax = plt.subplot()
+            # plt_img = ax.imshow(env._physics.render(height=480, width=640, camera_id=onscreen_cam))
+            # plt.ion()
 
         ### evaluation loop
         if temporal_agg:
@@ -353,10 +353,10 @@ def eval_bc(config, ckpt_name, save_episode=True, num_rollouts=50):
             for t in range(max_timesteps):
                 time1 = time.time()
                 ### update onscreen render and wait for DT
-                if onscreen_render:
-                    image = env._physics.render(height=480, width=640, camera_id=onscreen_cam)
-                    plt_img.set_data(image)
-                    plt.pause(DT)
+                # if onscreen_render:
+                #     image = env._physics.render(height=480, width=640, camera_id=onscreen_cam)
+                #     plt_img.set_data(image)
+                #     plt.pause(DT)
 
                 ### process previous timestep to get qpos and image_list
                 time2 = time.time()
