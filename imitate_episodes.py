@@ -329,10 +329,10 @@ def eval_bc(config, ckpt_name, save_episode=True, num_rollouts=50):
         ts = env.reset()
 
         ### onscreen render
-        # if onscreen_render:
-            # ax = plt.subplot()
-            # plt_img = ax.imshow(env._physics.render(height=480, width=640, camera_id=onscreen_cam))
-            # plt.ion()
+        if onscreen_render:
+            ax = plt.subplot()
+            plt_img = ax.imshow(env._physics.render(height=480, width=640, camera_id=onscreen_cam))
+            plt.ion()
 
         ### evaluation loop
         if temporal_agg:
